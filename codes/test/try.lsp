@@ -2,7 +2,7 @@
   ((println (net-error)) (exit)))
 
 (set 'server-ip "localhost")
-(set 'server-port 8889)
+(set 'server-port 9999)
 (set 'request-timeout 15000)
 
 ;; check if the connection is closed or not
