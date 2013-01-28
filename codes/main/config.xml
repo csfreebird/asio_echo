@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <log>
+    <folder_path>/opt/logs/</folder_path>
+  </log>
+  <socket>
+    <port_number>8889</port_number>
+    <wait_request_timeout>10</wait_request_timeout>
+  </socket>
+</service>
