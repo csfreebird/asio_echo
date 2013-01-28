@@ -1,0 +1,5 @@
+SmartPtr.o: SmartPtr.cpp ../include/loki/SmartPtr.h \
+ ../include/loki/LokiExport.h ../include/loki/SmallObj.h \
+ ../include/loki/Threads.h ../include/loki/Singleton.h \
+ ../include/loki/TypeManip.h ../include/loki/static_check.h \
+ ../include/loki/RefToValue.h ../include/loki/ConstPolicy.h

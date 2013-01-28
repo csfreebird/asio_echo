@@ -1,0 +1,5 @@
+OrderedStatic.lo: OrderedStatic.cpp ../include/loki/OrderedStatic.h \
+ ../include/loki/LokiExport.h ../include/loki/Singleton.h \
+ ../include/loki/Threads.h ../include/loki/Typelist.h \
+ ../include/loki/NullType.h ../include/loki/TypeManip.h \
+ ../include/loki/TypelistMacros.h ../include/loki/Sequence.h

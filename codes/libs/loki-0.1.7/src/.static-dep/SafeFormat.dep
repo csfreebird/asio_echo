@@ -1,0 +1,2 @@
+SafeFormat.o: SafeFormat.cpp ../include/loki/SafeFormat.h \
+ ../include/loki/LokiExport.h
