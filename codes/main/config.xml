@@ -4,7 +4,7 @@
     <folder_path>/opt/logs/</folder_path>
   </log>
   <socket>
-    <port_number>8889</port_number>
+    <port_number>9999</port_number>
     <wait_request_timeout>10</wait_request_timeout>
   </socket>
 </service>
