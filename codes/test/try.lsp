@@ -19,9 +19,9 @@
     (unless (net-send s (pack ">u" (length str-msg))) (quit-for-error))
     (unless (net-send s str-msg) (quit-for-error))
     (if (net-receive s result (+ 2 (length str-msg)))
-	(println (get-string (+ (address result) 2)))
+	(println (append "server response: " (get-string (+ (address result) 2))))
 	(quit-for-error))))
 
-(send-message "hello, freebird")
-(send-message "hello, sheismylife")
+(read 0 input-message 200)
+(send-message input-message)
 (exit)
