@@ -1,8 +1,8 @@
 (define (quit-for-error)
   ((println (net-error)) (exit)))
 
-(set 'server-ip "localhost")
-(set 'server-port 9999)
+(set 'server-ip (main-args 2))
+(set 'server-port (int (main-args 3)))
 (set 'request-timeout 15000)
 
 ;; check if the connection is closed or not
