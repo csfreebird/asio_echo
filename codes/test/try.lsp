@@ -1,3 +1,5 @@
+#!/usr/bin/newlisp
+
 (define (quit-for-error)
   ((println (net-error)) (exit)))
 
