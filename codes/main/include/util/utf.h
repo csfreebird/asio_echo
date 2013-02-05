@@ -12,5 +12,14 @@ string PrintStringAsBinaryString(char const* p) {
   return stream.str();
 }
 
+string PrintStringAsBinaryString(string const& str) {
+  stringstream stream;
+  for (size_t i = 0; i < str.size(); ++i) {
+    stream << PrintIntAsBinaryString(str[i]);
+    stream << " ";
+  }
+  return stream.str();
+}
+
 #endif
 

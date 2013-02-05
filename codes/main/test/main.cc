@@ -9,5 +9,7 @@ int main(int argc, char ** argv) {
   // TEST(3 > 2);
   char const * p = "一";
   cout << PrintStringAsBinaryString(p) << endl;
+  string str = "一";
+  cout << PrintStringAsBinaryString(str) << endl;
   cout << IsLittleEndian() << endl;
 }
