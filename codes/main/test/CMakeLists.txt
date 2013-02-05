@@ -5,6 +5,9 @@ include(CheckCXXSourceCompiles)
 include(CheckLibraryExists)
 include(CPack)
 enable_testing()
+
+set(PROJECT_INCLUDE_DIR ../include)
+
 ADD_DEFINITIONS(-DBOOST_TEST_DYN_LINK)
 set(CMAKE_BUILD_TYPE Debug)
 AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/test CPP_LIST)
