@@ -11,5 +11,8 @@ int main(int argc, char ** argv) {
   cout << PrintStringAsBinaryString(p) << endl;
   string str = "一";
   cout << PrintStringAsBinaryString(str) << endl;
-  cout << IsLittleEndian() << endl;
+
+  code_point c = UTF8ToUnicode(p, p + 3);
+  cout << "code point: 0x" << std::hex << c << " binary format:B" << PrintIntAsBinaryString(c) << endl;
+
 }
