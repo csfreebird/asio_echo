@@ -28,25 +28,18 @@ string PrintIntAsBinaryString(T v) {
     
   return stream.str();
 }
-/*
-bool IsLittleEndian() {
-  short int x = 0x00ff;
-  char* p = (char*)&x;
-  return (short int)p[0] == -1;
-}
-*/
 
 static union {
   char c[4];
   unsigned char l;
 } endian_test = {{'l','?','?','b'}};
 
-#define IsLittleEndian2() (endian_test.l == 'l')
+#define IsLittleEndian() (endian_test.l == 'l')
 
 // Convert the following integer values to big-endian if necessary
 template<class T>
 T Int16ToBigEndian(T value) {
-  if (IsLittleEndian2()) {
+  if (IsLittleEndian()) {
     uint8_t* p = reinterpret_cast<uint8_t*> (&value);
     T v1 = static_cast<T> (p[0]);
     T v2 = static_cast<T> (p[1]);
@@ -58,7 +51,7 @@ T Int16ToBigEndian(T value) {
 
 template<class T>
 T Int32ToBigEndian(T value) {
-  if (IsLittleEndian2()) {
+  if (IsLittleEndian()) {
     uint8_t* p = reinterpret_cast<uint8_t*> (&value);
     T v1 = static_cast<T> (p[0]);
     T v2 = static_cast<T> (p[1]);
@@ -77,7 +70,7 @@ T Int32ToBigEndian(T value) {
 // The size of value should be 2
 template<class T>
 T BigEndianBytesToInt16(vector<char> const& value) {
-  if (IsLittleEndian2()) {
+  if (IsLittleEndian()) {
     T h = static_cast<T> (value[0]);
     T l = static_cast<T> (value[1]);
     return (h << 8) | l;
@@ -131,7 +124,7 @@ T BigEndianBytesToInt32(char value[4]) {
 
 template<class T>
 T BigEndianBytesToInt(vector<char> value, size_t first, size_t last) {
-  if (IsLittleEndian2()) {
+  if (IsLittleEndian()) {
     T result;
     for (size_t i = first; i < last; ++i) {
       size_t offset = (last - i - 1) * 8;
